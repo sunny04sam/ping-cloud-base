@@ -227,6 +227,8 @@ spec:
               value: "/opt/shared-dir/newrelic.yml"
             - name: LOG4J_FORMAT_MSG_NO_LOOKUPS
               value: "true"
+            - name: USER_BASE_DN
+              value: "dc=rddops,dc=com"          
           envFrom:
             - configMapRef:
                 name: pingdirectory-environment-variables
