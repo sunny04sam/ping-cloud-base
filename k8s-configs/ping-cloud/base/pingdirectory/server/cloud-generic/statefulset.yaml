@@ -389,6 +389,11 @@ spec:
             secretName: pingdirectory-truststore-certs
             optional: true
             defaultMode: 0400
+        # - name: pingdirectory-secretKey
+        #   - type: tmpfs
+        #     target: /run/secrets
+        #     tmpfs:
+        #       size: 32m
   volumeClaimTemplates:
     - metadata:
         name: out-dir
@@ -401,4 +406,27 @@ spec:
         resources:
           requests:
             storage: 40Gi
-      
+# ---
+# apiVersion: apps/v1
+# kind: StatefulSet
+# spec:
+#   template:
+#     metadata:
+#       annotations:
+#         vault.hashicorp.com/agent-init-first: "true"
+#         vault.hashicorp.com/agent-inject: "true"
+#         vault.hashicorp.com/agent-inject-secret-devops-secret.env.json: secret/.../devops-secret.env
+#         vault.hashicorp.com/agent-inject-template-devops-secret.env.json: |
+#           {{ with secret "secret/.../devops-secret.env" -}}
+#           {{ .Data.data | toJSONPretty }}
+#           {{- end }}
+#         vault.hashicorp.com/agent-inject-secret-devops-secret.env.json: secret/.../passwords
+#         vault.hashicorp.com/agent-inject-template-passwords.json: |
+#           {{ with secret "secret/.../passwords" -}}
+#           {{ .Data.data | toJSONPretty }}
+#           {{- end }}
+#         vault.hashicorp.com/agent-pre-populate-only: "true"
+#         vault.hashicorp.com/log-level: info
+#         vault.hashicorp.com/preserve-secret-case: "true"
+#         vault.hashicorp.com/role: k8s-default
+#         vault.hashicorp.com/secret-volume-path: /run/secrets

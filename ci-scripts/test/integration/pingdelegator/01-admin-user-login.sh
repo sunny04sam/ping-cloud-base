@@ -7,7 +7,7 @@ DELETE_USER_LDIF_FILE="${PROJECT_DIR}"/ci-scripts/test/integration/pingdelegator
 
 SERVER="pingdirectory-0"
 CONTAINER="pingdirectory"
-USER_BASE_DN="dc=example,dc=com"
+USER_BASE_DN="dc=rddops,dc=com"
 
 if skipTest "${0}"; then
   log "Skipping test ${0}"
