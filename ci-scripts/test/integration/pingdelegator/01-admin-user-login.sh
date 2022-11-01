@@ -81,7 +81,7 @@ loginIntoPF() {
   -H "content-type: application/x-www-form-urlencoded" \
   -H "cookie: PF=${pf_cookie}" \
   -d pf.username=administrator \
-  -d pf.pass=2FederateM0re \
+  -d pf.pass=New2FederateM0re \
   -d pf.ok=clicked \
   -d pf.adapterId=daidphtml \
   -w "%{http_code}" \

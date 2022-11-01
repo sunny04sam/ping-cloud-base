@@ -18,7 +18,7 @@ testLdap() {
         --hostname "${PINGDIRECTORY_ADMIN}" \
         --port "${PD_SEED_LDAPS_PORT}" \
         --bindDN 'cn=administrator' \
-        --bindPassword '2FederateM0re' \
+        --bindPassword 'New2FederateM0re' \
         --useSSL \
         --trustAll \
         --baseDN "cn=config" \
@@ -33,7 +33,7 @@ testLdap() {
       --hostname "${PINGDIRECTORY_ADMIN}" \
       --port "${PD_SEED_LDAPS_PORT}" \
       --bindDN 'cn=administrator' \
-      --bindPassword '2FederateM0re' \
+      --bindPassword 'New2FederateM0re' \
       --useSSL \
       --trustAll \
       --baseDN "cn=config" \
