@@ -112,7 +112,7 @@ set_env_vars() {
   export CURL_TIMEOUT_SECONDS="${CURL_TIMEOUT_SECONDS:-450}"
 
   export ADMIN_USER=administrator
-  export ADMIN_PASS=2FederateM0re
+  export ADMIN_PASS=New2FederateM0re
 
   export PD_SEED_LDAPS_PORT=636
 
